@@ -14,6 +14,8 @@ function computerPlay(){
 
 function round(playerSelection, computerSelection) {
 
+    playerSelection = playerSelection.toLowerCase()
+
     function messageWin(){
         console.log("You win! " + playerSelection + " beats " + computerSelection)
     }
@@ -38,7 +40,7 @@ function round(playerSelection, computerSelection) {
         }
     }
 
-    if (playerSelection == 'paper') {
+    else if (playerSelection == 'paper') {
         if (computerSelection == 'rock') {
             messageWin()
         }
@@ -50,7 +52,7 @@ function round(playerSelection, computerSelection) {
         }
     }
 
-    if (playerSelection == 'scissors') {
+    else if (playerSelection == 'scissors') {
         if (computerSelection == 'rock') {
             messageLoss()
         }
@@ -60,6 +62,10 @@ function round(playerSelection, computerSelection) {
         else if (computerSelection == 'scissors') {
             messageTie()
         }
+    }
+    
+    else {
+        console.log('Please check your spelling: ' + "'" + playerSelection + "'" + ' does not seem to be correct...')
     }
 }
 
